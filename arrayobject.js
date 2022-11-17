@@ -40,7 +40,7 @@ var afterRemove=people.filter(function(heroname){
 console.log("After removing black panther in an array is",afterRemove);  
 
 
-//using filter function to display the  hero name that starts with a
+//using filter function to display the  hero name that starts with s
 const nameStartS=people.filter(function(name){
     return name.hero.toLowerCase().slice(0,1)=='s';
 }
