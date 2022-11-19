@@ -34,11 +34,11 @@ console.log("Details of id 4 is ",people[index]);
 
 
 
-var afterRemove=people.filter(function(heroname){
-    return heroname.hero.trim().toLowerCase()!=='BLACK PANTHER'.trim().toLowerCase();
+var afterRemove=people.findIndex(function(heroname){
+    return heroname.hero.trim().toLowerCase()=='BLACK PANTHER'.trim().toLowerCase();
 });
-console.log("After removing black panther in an array is",afterRemove);  
-
+people.splice(afterRemove,1);
+console.log("After removing black panther in an array is",people); 
 
 //using filter function to display the  hero name that starts with s
 const nameStartS=people.filter(function(name){
