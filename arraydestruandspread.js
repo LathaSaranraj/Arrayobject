@@ -24,6 +24,31 @@ console.log(student4);
 console.log(student5);
 console.log(student6);
 
+
+const colorArr = ["red", "yellow", "blue", "green", "white", "black"];
+
+const [first, second] = colorArr;
+console.log(first, second);
+
+// red, yellow
+
+//How to Swap Variables with Destructuring
+
+const edibles = ["food", "fruits"];
+
+let [positionOne, positionTwo] = edibles;
+[positionOne, positionTwo] = [positionTwo, positionOne];
+console.log(positionOne, positionTwo);  //Note that this method of swapping variables doesn't mutate the original array.
+
+
+//How to Mutate Arrays with Destructuring
+const edibles = ["food", "fruits"];
+
+[edibles[0], edibles[1]] = [edibles[1], edibles[0]];
+console.log(edibles);
+
+// ["fruits", "food"]
+
 // Store element in variable and create new array using remaining elements
 let [student7, ...newStudents] = students;
 console.log(student7);
