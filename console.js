@@ -15,3 +15,5 @@ console.log(Math.floor(num1));
 console.log(Math.round(num1));
 console.log(Math.random(num1));
 console.log(Math.floor(Math.random()*(100-1)+1));    //syntax between max and min value is Math.random*(max-min)+min
+
+
