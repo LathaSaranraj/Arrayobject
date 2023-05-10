@@ -19,6 +19,10 @@ fruits.shift(grapes); //removes first
 fruits[3]="mango"; //adding or updating
 
 fruits.slice()
+const myArray = [1, 2, 3, 4, 5];
+const newArray = myArray.slice(1, 4); // extracts elements with indexes 1, 2, and 3
+console.log(newArray); // [2, 3, 4]
+console.log(myArray); // [1, 2, 3, 4, 5] (original array remains unchanged)
 
 
 //SPLICE METHOD
@@ -111,14 +115,37 @@ vegetables.join()  //it will join all the variables in array
 vegetables.join(" -");
 
 //sorting 
-const students=[3,8,1];
-students.sort();  //ascending order
+const students=[3,8,1];   ["anbu","senthil"]
+students.sort();  //ascending order   
 
 
-students.sort(function(a,b){
-  return b-a;
+
+//The compare function should return a negative number if''a ' should be sorted before 'b', 
+//a positive number if 'b' should be sorted before 'a', and zero if a and b are equal.
+
+students.sort(function(a,b){  //3,8                                            3,1
+  return b-a;   //8-3=5  which is positive means  b sorted before a  8,3,1     1-3=-2 8,3,1
 })
 
+
+//string in ascending order
+const students= ["senthil","anbu","dhakshin"];
+students.sort();
+
+//string in descending order
+//The function first checks if a is greater than b, which means that 'a 'should be sorted before 'b' and returns -1 to indicate that.
+// If a is less than b, the function returns 1 to indicate that b should be sorted before a. If a and b are equal, the function returns 0 to indicate that their order doesn't matter.
+students.sort(function(a, b) {  //senthil,anbu 
+  if (a > b) {                      //115,97
+    return -1;
+  } else if (a < b) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+
+console.log(students);
 students.reverse();
 
 
@@ -134,6 +161,7 @@ console.log(array);
 isAllowed=allAges.every(function(value){
   return value>18;
 })
+console.log(isAllowed);
 
 //Some Method
 
@@ -163,7 +191,10 @@ var negativenumbers=numbers.filter(checkNegative);    //Here numbers is an array
 function checkNegative(number){
     return number<0;
 }
-
+const answer = numbers.filter((element) => element<0 ); 
+const answer = numbers.filter((element) => {
+  return element<0
+ } );
 /*
     # What is find method?
     - It takes call back function as parameter.

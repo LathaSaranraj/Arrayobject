@@ -51,19 +51,26 @@ let order=vegetables.concat(fruits);
 vegetables[0].item="noodles"
 
 //sorting in object
+/*This function compares the name property of a with the name property of b. If a.name is greater than b.name, it returns 1, which tells the sort() method to place a after b. If a.name is less than b.name, it returns -1, which tells the sort() method to place a before b. If the names are equal, it returns 0, which tells the sort() method to leave a and b in their current order.
+
+When the sort() method receives this function as an argument, it uses it to compare the elements in the students array and rearranges them accordingly. It starts by comparing the first two elements, { id: 1, name: "Senthil" } and { id: 2, name: "Dhakshin" }. Since "Senthil" comes after "Dhakshin" alphabetically, the compare function returns 1, telling the sort() method to place { id: 1, name: "Senthil" } after { id: 2, name: "Dhakshin" }.
+
+The sort() method then moves on to compare the next two elements, { id: 2, name: "Dhakshin" } and { id: 3, name: "Anbu" }. Since "Dhakshin" comes before "Anbu" alphabetically, the compare function returns -1, telling the sort() method to place { id: 2, name: "Dhakshin" } before { id: 3, name: "Anbu" }.
+
+Finally, the sort() method compares the last two elements, { id: 1, name: "Senthil" } and { id: 3, name: "Anbu" }. Since "Senthil" comes after "Anbu" alphabetically, the compare function returns 1, telling the sort() method to place { id: 1, name: "Senthil" } after { id: 3, name: "Anbu" }.*/
 const students=[
-    {id:1,name:"Senthil"},
-    {id:2,name:"Dhakshin"},
-    {id:3,name:"Anbu"}
+    {id:1,name:"Senthil"},//83
+    {id:2,name:"Dhakshin"},//68
+    {id:3,name:"Anbu"}//65
 ];
-students.sort(function(a,b)){
-    nameA=a.name.toLowercase();
-    nameB=b.name.toLowercase();
-    if(a.name<b.name)
+students.sort(function(a,b){  //Senthil,Dhakshin  83,68  2nd time ( Dhakshin ,Anbu )68,65
+    nameA=a.name.toLowerCase();
+    nameB=b.name.toLowerCase();//Senthil,Dhakshin    83,68
+    if(a.name<b.name)       //  return -1 a should be sorted before b
     return -1;
-    if(a.name>b.name)
-    return 1;
-}
+    if(a.name>b.name)   //83>68  //Dhakshin,Senthil,Anbu
+    return 1;     //  if a function returns 1, b should be sorted before a  =>
+})
 // Topic: every(); method
 
 /*
@@ -151,41 +158,48 @@ const usersDetails = [
 
   //map method
  
-    const cart = [
-      {
-        id: 1,
-        name: "Phone",
-        price: 1000,
-      },
-      {
-        id: 2,
-        name: "Tablet",
-        price: 5000,
-      },
-      {
-        id: 3,
-        name: "Laptop",
-        price: 6000,
-      },
-    ];
-cart.map(function(val){
-  return val.name;                    //u can also concat firstname and lastname;
-})
+    
 
-people.map(function(val)
+
+// create an array of numbers
+let numbers = [1, 2, 3, 4, 5];
+
+// use map() to multiply each number by 2
+let doubledNumbers = numbers.map(function(number) {
+  return number * 2;
+});
+
+// log the new array
+console.log(doubledNumbers);
+
+//another example
+people=[
+  {
+    id:1,
+  firstname:"latha",
+  lastname:"jeysri"
+},
+{
+  id:2,
+  firstname:"saran",
+lastname:"raj"
+},
+];
+
+let result=people.map(function(val)
 {
   let fullname=[val.firstname+val.lastname].join(" ");
   let obj={id:val.id,fullname:fullname}
   return obj;
-
+})
+console.log(result);
 
   // javascript chaining methods
   let products=[
-    {id:,title:"android phone",cost:7500},
+    {id:1,title:"android phone",cost:7500},
     {id:2,title:"gaming computer",cost:90500},
     {id:3,title:"headphone",cost:2400},
-  ];
-}
+    ];
 
 //sort it using lowestprice
 let sortlow = products.sort(function(a,b){
@@ -223,21 +237,25 @@ shoppingCart.reduce(function(accumulator,currentval){
 //difference between sort,find v/s filter v/s map v/s reduce
 const numbers=[34,54,65,12,78];  //4 will come after 34
 let result=numbers.sort();
+console.log(result);
 
-numbers.find((value)=>{
-  return value>50   //it will give u only the first result o/p 65  filter will overcome this
+let result2=numbers.find((value)=>{
+  return value>50   //it will give u only the first result o/p 54 filter will overcome this
 
 })
-numbers.filter((value)=>{
+console.log(result2);
+let result3=numbers.filter((value)=>{
   return value>50   //o/p 65,78
 })
-
-numbers.map((value)=>{
-  return value>50; //  will evaluate false,true
+console.log(result3);
+let result4=numbers.map((value)=>{
+  // return value>50; //  will evaluate false,true
   // or else 
-  return "#"+value;
+  // return "#"+value; 
+  return value*value; //or else return value*value;
 })
+console.log(result4);
 //reduce
-numbers.reduce((acc,value){
+numbers.reduce((acc,value)=>{
   return acc+value;  //u can also multiply aprev*current  it will give u single value whereas map will multiply the each element 
 })

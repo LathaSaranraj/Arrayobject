@@ -68,3 +68,21 @@ sentencene=`the hello
 console.log('"hello" world');
 console.log(`"hello" world`);
 console.log(`5'o clock`); // to print the same in string we need to use escape characters \'
+// var sentence='   "Hello" "world"   ';
+// var sentencenew="  5'oclock  ";
+// console.log(sentence);
+// console.log(sentencenew);
+
+// var sentenceTemplate=` 'hello' "world" `;
+// console.log(sentenceTemplate);     //use of backtick template literal
+
+
+// var friend1="latha";
+// var friend2="soundarya";
+// sentence=`${friend1} is a friend of ${friend2}`;   // string interpolation //latha is friend of soundarya
+// console.log(sentence);
+
+
+var sentence= `Hello  
+                     world`;
+                      console.log(sentence);

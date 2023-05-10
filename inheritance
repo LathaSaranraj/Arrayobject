@@ -1,0 +1,34 @@
+class Vehicle {
+  // Define a constructor with parameters for the make and model of the vehicle
+  constructor(make, model) {
+    // Set the make and model properties of the vehicle object
+    this.make = make;
+    this.model = model;
+  }
+
+  // Define a method for starting the vehicle
+  start() {
+    // This method is abstract and should be implemented by subclasses
+    throw new Error("Abstract method 'start' must be implemented by subclass");
+  }
+}
+
+// Define a subclass representing a car
+class Car extends Vehicle {
+  // Define a constructor with parameters for the make, model, and color of the car
+  constructor(make, model, color) {
+    // Call the superclass constructor with the make and model parameters
+    super(make, model);
+    // Set the color property of the car object
+    this.color = color;
+  }
+
+  // Implement the abstract start method
+  start() {
+    console.log("Starting the " + this.color + " " + this.make + " " + this.model);
+  }
+}
+
+// Create a new car object and call its start method
+var myCar = new Car("Toyota", "Camry", "blue");
+myCar.start();

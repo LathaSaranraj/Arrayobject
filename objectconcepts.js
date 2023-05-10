@@ -1,3 +1,28 @@
+//Object  is a variable too.It stores more than one value.You can store number
+//boolean,string,array.
+//Key:Value
+//Example:
+ Student={
+name:Dhakshin,
+rollNumber:1,
+subjects:["Maths","English"],
+
+},
+//Acessing values from object
+Console.log(student.name);
+Console.log(student.subjects[0]);
+//Adding Key and value pair in object
+ Student.division=”A”;
+//When your key name has white space
+Student[“School Name”]=”ABC School”
+//Accessing key name from variable
+var tutionName=”Tution”;
+Student[tutionName]=”XYZ Classes”;
+
+
+
+
+
 //Factory functions
 function createPerson(name){    //factory functions camelcase myFirstname
   let person={    // or return
@@ -60,7 +85,8 @@ this.name=name;
   }`)
 
   Person.call({},"trisha");
-  another way const person=new Person("trisha");
+  another way
+   const person=new Person("trisha");
 
 
   Person.apply({},["trisha","37"]); //array
@@ -82,9 +108,9 @@ for(let key of Object.keys(user))   // object.keys will the get the value of tha
 console.log(key,user[key]);
 
 for(let entry  of Object.entries(user))   // object.keys will the get the value of that object and tranfer in arrays
-console.log(user[entry]); // it will give both key and value
+console.log(entry); // it will give both key and value
  
-if(name in user)
+if('name' in user)
 console.log("yes");
 
 
@@ -315,6 +341,30 @@ object1[key2] = value2;
 object1[key3] = value3;
 console.log(object1);
 
+
+const person = {
+  name: 'Alice',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+};
+
+const { name, age, address: { city, country } } = person;
+
+console.log(name);     // Output: 'Alice'
+console.log(age);      // Output: 30
+console.log(city);     // Output: 'New York'
+console.log(country);  // Output: 'USA'
+
+
+function printPersonInfo({ name, age, address: { city, country } }) {
+  console.log(`${name} is ${age} years old and lives in ${city}, ${country}.`);
+}
+
+printPersonInfo(person); 
+
 //OBJECT ITERATION
 // Object Iteration
 
@@ -324,7 +374,7 @@ const object = {
   key3: "value3",
 };
 
-// For in loop in objects
+// For in loop in objects                             
 for (const key in object) {
   console.log(key);
   console.log(object[key]);

@@ -6,25 +6,33 @@ console.log(typeof(datetoday));
 console.log(typeof(datetodaynew));
 
 
-const datetodaynow=Date.now();
-console.log(datetodaynow);
-const datetodayparse=Date.parse();
-console.log(datetodayparse);
-const datetodayUTC=Date.UTC();
-console.log(datetodayUTC);
+datetodaynew.getDay()   //sun=>0,mon=1
+console.log(datetoday.getFullYear());  //it will not work
 //TO GET DATE, MONTH AND YEAR
 const date = new Date();
-const [month, day, year] = [
+const [month, date, year] = [
   date.getMonth(),
   date.getDate(),
   date.getFullYear(),
 ];
-console.log(day);
+console.log(date);
+console.log(year);
 const [hour, minutes, seconds] = [
   date.getHours(),
   date.getMinutes(),
   date.getSeconds(),
 ];
+savedDate=new Date("July 6 1996");
+console.log(savedDate.getDate());
+
+
+const datetodaynow=Date.now();  //returns the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC (also known as the Unix Epoch). This value represents the current date and time.
+console.log(datetodaynow);
+const datetodayparse=Date.parse();
+console.log(datetodayparse);
+const datetodayUTC=Date.UTC();
+console.log(datetodayUTC);
+
  //SEVERAL WAYS TO CREATE DATE OBJECT
  const today = new Date();
 const birthday = new Date("December 17, 1995 03:24:00"); // DISCOURAGED: may not work in all runtimes
@@ -48,8 +56,14 @@ date.toJSON(); // 2020-05-12T23:50:21.817Z
 date.toLocaleString(); // 5/12/2020, 6:50:21 PM
 date.toLocaleDateString(); // 5/12/2020
 date.toLocaleTimeString(); // 6:50:21 PM
+
+console.log(new Date().toLocaleDateString("en-IN").split("/"));
+let[month,date,year]=new Date().toLocaleDateString("en-IN").split("/");  //en-INDIA  this is array destructuring
+console.log(month,date,year);
+
+let[month,date,year]=new Date().toLocaleDateString("en-US").split("/");  //en-US
  
-//INTERPRETATION OF TWO DIGIT YEAR
+//INTERPRETATION OF TWO DIGIT YEAR  => problem y2k
 
 let date = new Date(98, 1); // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
 date = new Date(22, 1); // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
@@ -71,11 +85,11 @@ date.getFullYear(); // 22 (not 1922, not 2022)
 
 
 //USING DATE OBJECT
-const start = Date.now();
+const start = Date.now();   //11:30=> miliiseconds
 
 // The event to time goes here:
 doSomethingForALongTime();
-const end = Date.now();
+const end = Date.now();   //12:30=>milliseconds
 const elapsed = end - start;
  // elapsed time in milliseconds
  console.log(elapsed);
@@ -91,16 +105,20 @@ const elapsed = end.getTime() - start.getTime(); // elapsed time in milliseconds
 
 
 // To test a function and get back its return
-function printElapsedTime(testFn) {
-  const startTime = Date.now();
-  const result = testFn();
-  const endTime = Date.now();
+function printElapsedTime(testFn) {   //print
+  const startTime = Date.now(); //16831114545
+  const result = testFn();print
+  const endTime = Date.now();///13682454487
 
   console.log(`Elapsed time: ${String(endTime - startTime)} milliseconds`);
   return result;
 }
 
-const yourFunctionReturn = printElapsedTime(yourFunction);
-Copy to Clipboard
+const yourFunctionReturn = printElapsedTime(print);
+//example
+function print() {
+  console.log("Hello, "+ "!");
+};
+console.log(yourFunctionReturn);
 
 

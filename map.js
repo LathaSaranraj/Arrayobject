@@ -1,8 +1,3 @@
-const userIDs = new Map([
-    ["userID", "101"],
-    ["userName", "Batman"],
-  ]);
-  console.log(userIDs);
 
 
   let student={
@@ -33,7 +28,12 @@ let student={
   }
   // Using constructor
   const studentDetails = new Map();
-  
+  const userIDs = new Map([
+    ["userID", "101"],
+    ["userName", "Batman"],
+  ]);
+  console.log(userIDs);
+
   // set();
   studentDetails.set("name", "Batman");
   studentDetails.set("rollNumber", 1);
@@ -67,4 +67,30 @@ let student={
   console.log(teachersDetail.name);
   console.log(extraTeachersDetail);
   
+
+
+  //another example
+  Sure! Here's an example of how to use the Map object in JavaScript:
+
+javascript
+
+// create a new Map object
+let myMap = new Map();
+
+// set some key-value pairs in the map
+myMap.set('key1', 'value1');
+myMap.set('key2', 'value2');
+myMap.set('key3', 'value3');
+
+// get the value associated with a key
+console.log(myMap.get('key2')); // output: 'value2'
+
+// check if a key exists in the map
+console.log(myMap.has('key4')); // output: false
+
+// iterate over the key-value pairs in the map
+myMap.forEach(function(value, key) {
+  console.log(key + ' = ' + value);
+});
+// myMap.delete('key2');
   

@@ -116,7 +116,8 @@ Console.log(f+g+h);  //it will sum the two value in last it will conver t from l
 // if else ,else if and switch   exapmle gmail or facebook
 var age=35;
 if(age>21){
-    console.log("you are eligible for votion"); //single code of line statements no need of curly braces
+    console.log("you are eligible for votion");
+     //single code of line statements no need of curly braces
 
 }else{
     console.log("you are not eligible");
@@ -128,10 +129,10 @@ let age = 25;
 if (age < 18) {
   console.log("You are a minor.");
 }
- else if (age >= 18 && age <= 60)
+else if  (age >= 18 && age <= 60)
   {
   console.log("You are an adult.");
-}
+  }
 else {
   console.log("You are a senior citizen.");
 }
@@ -148,7 +149,7 @@ switch (age) {
     console.log("You are in 8th std");
     break;
   case 15:
-    console.log("You are in t9h std");
+    console.log("You are in 9th std");
     break;
   case 16:
     console.log("You are in 10th std");
